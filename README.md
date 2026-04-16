@@ -18,17 +18,17 @@ A simple Notes App built using **Node.js, Express, and Vanilla JavaScript**.
 
 ## 📂 Project Structure
 project/
-├── routes/
-│ └── notes.js
-├── middleware/
-│ └── logger.js
-├── data/
-│ └── notes.json
-├── frontend/
-│ ├── index.html
-│ ├── style.css
-│ └── script.js
-├── server.js
+- ├── routes/
+  - │ └── notes.js
+- ├── middleware/
+  - │ └── logger.js
+- ├── data/
+  - │ └── notes.json
+- ├── frontend/
+  - │ ├── index.html
+  - │ ├── style.css
+  - │ └── script.js
+- ├── server.js
 
 
 ## ▶️ How to Run
