@@ -1,0 +1,82 @@
+body {
+  font-family: Arial;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  margin-top: 20px;
+}
+
+/* LEFT */
+.editor {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  padding: 12px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  height: 250px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.buttons {
+  margin-top: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 6px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+/* RIGHT */
+.sidebar {
+  width: 35%;
+  margin-left: 20px;
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  height: 350px;
+  overflow-y: auto;
+}
+
+.sidebar li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.sidebar li:hover {
+  background: #f0f0f0;
+}
+
+.active { /*if an element has active, apply this style*/
+  background: #dfe6ff;
+}
