@@ -1,6 +1,6 @@
 body {
   font-family: Arial;
-  background: #f4f6f8;
+  background: #e7ecf3;
   margin: 0;
   padding: 20px;
 }
@@ -68,9 +68,11 @@ button:hover {
 }
 
 .sidebar li {
-  padding: 10px;
+  display: flex;
+  justify-content: space-between; /* pushes title left, icons right */
+  align-items: center;
+  padding: 15px;
   border-bottom: 1px solid #eee;
-  cursor: pointer;
 }
 
 .sidebar li:hover {
@@ -80,3 +82,56 @@ button:hover {
 .active { /*if an element has active, apply this style*/
   background: #dfe6ff;
 }
+
+.icons {
+  display: flex;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+
+.sidebar li:hover .icons {
+  opacity: 1;
+  pointer-events: auto; /* allow clicks */
+}
+
+.edit-icon,
+.delete-icon{
+  cursor: pointer;
+  display:inline-block;
+  transition:transform 0.2s ease;
+}
+
+.edit-icon:hover{
+  transform: scale(1,2);
+}
+
+.delete-icon:hover {
+  transform: scale(1.2);
+  color: red;
+}
+
+.search-box{
+  display: flex;
+  align-items: center;
+  background: white;
+  padding:8px;
+  border-radius:10px;
+  border: 1px solid #ccc;
+  margin:10px;
+}
+
+.search-icon{
+  margin-left: 8px;
+  font-size:16px;
+  color:grey;
+}
+
+#searchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+}
+
