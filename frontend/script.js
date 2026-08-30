@@ -96,20 +96,28 @@ async function addNote() {
         const title = document.getElementById('titleInput').value; // get title from input 
         const description = document.getElementById('descInput').value; // get description from input 
 
+        let res;
+
         if(selectedId){
-            await fetch(`${API}/${selectedId}`, { // call specific note 
+            res = await fetch(`${API}/${selectedId}`, { // call specific note 
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title, description }) // send updated data 
             });
         }
         else{
-            await fetch(API, { // send request to server 
+            res = await fetch(API, { // send request to server 
             method: 'POST',
             headers: { 'Content-Type': 'application/json' }, // sending JSON data 
             body: JSON.stringify({ title, description }) // JS object -> JSON String 
         });
 
+        }
+        const data = await res.json();
+
+        if(!res.ok){
+            alert(data.message || "Something went wrong");
+            return;
         }
 
         // clear inputs after adding
@@ -120,6 +128,7 @@ async function addNote() {
 
     } catch (err) {
         console.error("Add failed:", err);
+        alert("Network error , please try again");
     }
 }
 

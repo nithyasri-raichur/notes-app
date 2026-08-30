@@ -40,6 +40,10 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
     try {
         const { title, description } = req.body;
+
+        if (!title || title.trim() === ''){
+            return res.status(400).json({message: 'Title is required'});
+        }
         const newNote = new Note({title,description});
 
         await newNote.save();
